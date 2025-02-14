@@ -34,3 +34,5 @@ AND, you must change your ViewLocator.cs to handle the various Base classes you 
         }
 ```
 Now, whenever you change CurrentViewModel on MainWindowViewModel, you'll get the corresponding View loaded inside the ContentControl
+
+Also, take a look at similar approach https://github.com/stevemonaco/AvaloniaNavigationDemo
