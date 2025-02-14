@@ -8,22 +8,18 @@ You'll need your MainWindowViewModel to look like:
 ```
     public partial class MainWindowViewModel : ObservableObject
     {
-        private ObservableObject _currentViewModel;
-
-        public ObservableObject CurrentViewModel
-        {
-            get => _currentViewModel;
-            set => SetProperty(ref _currentViewModel, value);
-        }
+        [ObservableProperty]
+        private ObservableObject currentViewModel;
 
         public MainWindowViewModel()
         {
             // Default View
-            CurrentViewModel = new WelcomeViewModel();
+            currentViewModel = new WelcomeViewModel();
         }
+        
 
         [RelayCommand]
-        private void ShowWelcome() => CurrentViewModel = new WelcomeViewModel();
+        private void ShowWelcome() => currentViewModel = new WelcomeViewModel();
     }
 ```
 AND, you must change your ViewLocator.cs to handle the various Base classes you will use on your VMs's i.e.
