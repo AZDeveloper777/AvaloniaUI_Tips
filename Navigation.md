@@ -19,7 +19,7 @@ You'll need your MainWindowViewModel to look like:
         
 
         [RelayCommand]
-        private void ShowWelcome() => currentViewModel = new WelcomeViewModel();
+        private void ShowWelcome() => CurrentViewModel = new WelcomeViewModel();
     }
 ```
 AND, you must change your ViewLocator.cs to handle the various Base classes you will use on your VMs's i.e.
